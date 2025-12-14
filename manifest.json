@@ -1,0 +1,20 @@
+{
+  "name": "Viral Deshi Hub",
+  "short_name": "DeshiHub",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0e29",
+  "theme_color": "#0a0e29",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

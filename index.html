@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ✅ SEO Meta Tags -->
+    <title>Viral Deshi Hub - Trending Bangladeshi Videos</title>
+    <meta name="description" content="Watch the latest viral videos, funny clips, music videos, and trending content from Bangladesh. The ultimate hub for Deshi entertainment.">
+    <meta name="keywords" content="Viral BD, Bangladeshi Videos, Bangla Natok, Funny Video, Trending Bangladesh, Viral Deshi Hub, Bangla Song">
+    <meta name="author" content="Viral Deshi Hub">
+    <meta name="theme-color" content="#0a0e29">
+    <meta name="robots" content="index, follow">
+
+    <!-- ✅ Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <!-- এখানে আপনার গিটহাব লিংক বসাবেন, যেমন: https://username.github.io/repo-name/ -->
+    <meta property="og:url" content=""> 
+    <meta property="og:title" content="Viral Deshi Hub - Trending Bangladeshi Videos">
+    <meta property="og:description" content="Unlimited viral content from across Bangladesh. Watch now!">
+    <meta property="og:image" content="https://i.postimg.cc/0jYQ8bXW/food.jpg">
+
+    <!-- ✅ PWA Links -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+
+    <!-- ✅ Google Analytics (আপনার ID যুক্ত করা হয়েছে) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRNC1BFHJ3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-TRNC1BFHJ3');
+    </script>
+
+    <!-- Styles & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #0a0e29;
+            --secondary: #00d4ff;
+            --accent: #ff2e63;
+            --dark: #070a1c;
+            --light: #1a1f3e;
+            --text: #ffffff;
+            --text-muted: #a0a7c2;
+            --gradient-bg: linear-gradient(135deg, #0a0e29 0%, #121842 50%, #0a0e29 100%);
+            --gradient-accent: linear-gradient(90deg, #ff2e63 0%, #ff6b9d 100%);
+            --gradient-blue: linear-gradient(90deg, #00d4ff 0%, #0088ff 100%);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.4);
+            --border-radius: 20px;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            background: var(--gradient-bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 46, 99, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 136, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 10%;
+            background: var(--gradient-accent);
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(10, 14, 41, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 3rem;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+        }
+
+        .logo-text h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--text), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo-tagline {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1002;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-blue);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--secondary);
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Admin Panel Button */
+        .admin-panel-btn {
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(255, 46, 99, 0.3);
+        }
+
+        .admin-panel-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 46, 99, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: rgba(10, 14, 41, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1001;
+            padding: 100px 40px 40px;
+            transition: right 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: -20px 0 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .mobile-nav .nav-link {
+            font-size: 1.3rem;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-admin-btn {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        /* Admin Panel Sidebar */
+        .admin-sidebar {
+            position: fixed;
+            top: 0;
+            left: -400px;
+            width: 400px;
+            height: 100vh;
+            background: rgba(10, 14, 41, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            padding: 100px 40px 40px;
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 20px 0 60px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+        }
+
+        .admin-sidebar.active {
+            left: 0;
+        }
+
+        .admin-close-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 2.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+        }
+
+        .admin-close-btn:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        .admin-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .admin-logo i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+
+        .admin-logo h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--text), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Admin Login Form */
+        .admin-login-form {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-login-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--text);
+        }
+
+        .login-input-group {
+            margin-bottom: 20px;
+        }
+
+        .login-input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--gradient-blue);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .login-error {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Admin Panel Content */
+        .admin-panel-content {
+            display: none;
+        }
+
+        .admin-panel-content.active {
+            display: block;
+        }
+
+        .admin-section {
+            margin-bottom: 40px;
+        }
+
+        .admin-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Add Video Form */
+        .add-video-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .add-video-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .add-video-form input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .add-video-form input:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .form-btn {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .form-btn.save {
+            background: var(--gradient-blue);
+            color: white;
+        }
+
+        .form-btn.cancel {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Videos List */
+        .videos-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .videos-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .videos-list::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        .videos-list::-webkit-scrollbar-thumb {
+            background: var(--gradient-blue);
+            border-radius: 3px;
+        }
+
+        .video-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .video-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--secondary);
+        }
+
+        .video-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .video-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: var(--gradient-blue);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .video-actions button {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .video-actions button:hover {
+            transform: scale(1.1);
+        }
+
+        .video-content {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .video-thumbnail {
+            width: 120px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .video-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .video-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient-blue);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.error {
+            background: var(--gradient-accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--text), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Videos Grid */
+        .videos-grid {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .video-card {
+            background: var(--glass-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .thumbnail-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .video-card:hover .thumbnail {
+            transform: scale(1.1);
+        }
+
+        .play-btn-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, rgba(10, 14, 41, 0.3), rgba(10, 14, 41, 0.9));
+            cursor: pointer;
+            transition: background 0.4s ease;
+        }
+
+        .play-btn {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            transition: var(--transition);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .video-info {
+            padding: 25px;
+        }
+
+        .video-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-channel {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .channel-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gradient-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .video-views {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Ads Container */
+        .ads-container {
+            background: var(--glass-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin: 80px 0;
+            border: 2px dashed rgba(0, 212, 255, 0.3);
+            text-align: center;
+        }
+
+        .ads-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        #adsterra-ad {
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            color: var(--text-muted);
+        }
+
+        /* Social Section */
+        .social-section {
+            padding: 80px 0;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .social-card {
+            background: var(--glass-bg);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .social-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .social-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            background: rgba(7, 10, 28, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+
+        .footer-logo span {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--text), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        /* Video Player Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 10, 28, 0.98);
+            backdrop-filter: blur(30px);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-modal.active {
+            display: flex;
+        }
+
+        .video-modal-content {
+            background: var(--glass-bg);
+            width: 95%;
+            max-width: 1200px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-modal-header {
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .close-video-modal {
+            font-size: 2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+        }
+
+        .close-video-modal:hover {
+            color: var(--accent);
+        }
+
+        .video-player {
+            width: 100%;
+            height: 500px;
+            background: #000;
+        }
+
+        /* Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hamburger-menu {
+                display: flex;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .admin-sidebar {
+                width: 100%;
+                left: -100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .videos-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 130px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-player {
+                height: 300px;
+            }
+            
+            .admin-sidebar {
+                padding: 100px 20px 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .mobile-menu {
+                width: 100%;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .video-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .video-thumbnail {
+                width: 100%;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-play-circle logo-icon"></i>
+                    <div class="logo-text">
+                        <h1>Viral Deshi Hub</h1>
+                        <div class="logo-tagline">Bangladesh's Viral Platform</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-menu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#videos" class="nav-link">Videos</a>
+                    <a href="#trending" class="nav-link">Trending</a>
+                    <a href="#community" class="nav-link">Community</a>
+                    <button class="admin-panel-btn" id="adminPanelBtn">
+                        <i class="fas fa-user-shield"></i>
+                        Admin Panel
+                    </button>
+                </nav>
+
+                <!-- Hamburger Menu -->
+                <button class="hamburger-menu" id="hamburgerMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#videos" class="nav-link">Videos</a>
+            <a href="#trending" class="nav-link">Trending</a>
+            <a href="#community" class="nav-link">Community</a>
+            <button class="admin-panel-btn mobile-admin-btn" id="mobileAdminBtn">
+                <i class="fas fa-user-shield"></i>
+                Admin Panel
+            </button>
+        </nav>
+    </div>
+
+    <!-- Admin Panel Sidebar -->
+    <div class="admin-sidebar" id="adminSidebar">
+        <button class="admin-close-btn" id="adminCloseBtn">&times;</button>
+        
+        <div class="admin-logo">
+            <i class="fas fa-user-shield"></i>
+            <h2>Admin Panel</h2>
+        </div>
+
+        <!-- Admin Login Form (Initially Visible) -->
+        <div class="admin-login-form" id="adminLoginForm">
+            <h3>Admin Login</h3>
+            <div class="login-input-group">
+                <label>Username</label>
+                <input type="text" class="login-input" id="adminUsername" placeholder="Enter username">
+            </div>
+            <div class="login-input-group">
+                <label>Password</label>
+                <input type="password" class="login-input" id="adminPassword" placeholder="Enter password">
+            </div>
+            <div class="login-error" id="loginError">Invalid username or password</div>
+            <button class="login-btn" id="loginBtn">Login</button>
+        </div>
+
+        <!-- Admin Panel Content (Hidden until login) -->
+        <div class="admin-panel-content" id="adminPanelContent">
+            <!-- Add Video Section -->
+            <div class="admin-section">
+                <h3><i class="fas fa-plus-circle"></i> Add New Video</h3>
+                <form class="add-video-form" id="addVideoForm">
+                    <div class="form-group">
+                        <label>Video Title</label>
+                        <input type="text" id="videoTitle" placeholder="Enter video title" maxlength="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Video URL</label>
+                        <input type="url" id="videoUrl" placeholder="YouTube, Drive, Postimages, etc." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Thumbnail URL</label>
+                        <input type="url" id="thumbnailUrl" placeholder="Postimages.cc or any image URL" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Channel Name</label>
+                        <input type="text" id="channelName" placeholder="Enter channel name" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Views Count</label>
+                        <input type="text" id="videoViews" placeholder="e.g., 1.5M, 500K" value="0">
+                    </div>
+                    <div class="form-actions">
+                        <button type="reset" class="form-btn cancel">Cancel</button>
+                        <button type="submit" class="form-btn save">Save Video</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Videos List Section -->
+            <div class="admin-section">
+                <h3><i class="fas fa-list"></i> Videos List</h3>
+                <div class="videos-list" id="adminVideosList">
+                    <!-- Videos will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <button class="login-btn" id="logoutBtn" style="background: var(--gradient-accent); margin-top: 30px;">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">Operation successful</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Experience Bangladesh's Viral Revolution</h1>
+            <p>Watch trending Bangladeshi videos with premium quality. Support us by watching short ads, then enjoy unlimited viral content from across Bangladesh.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalVideos">0</div>
+                    <div class="stat-label">Viral Videos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2.5M+</div>
+                    <div class="stat-label">Monthly Views</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Live Updates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Grid -->
+    <section class="videos-grid" id="videos">
+        <div class="container">
+            <h2 class="section-title">🔥 Trending Now</h2>
+            <p class="section-subtitle">The most viral Bangladeshi content curated exclusively for you.</p>
+            
+            <!-- Ad Container -->
+            <div class="ads-container">
+                <div class="ads-title">Adsterra Ad Space</div>
+                <div id="adsterra-ad">
+                    <div style="text-align: center; padding: 30px;">
+                        <i class="fas fa-ad" style="font-size: 3rem; color: var(--secondary); margin-bottom: 15px;"></i>
+                        <h3 style="margin-bottom: 10px;">Adsterra Ad Space</h3>
+                        <p style="color: var(--text-muted);">Your advertisement will appear here</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="videos-container" id="videosContainer">
+                <!-- Video cards will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="social-section" id="community">
+        <div class="container">
+            <h2 class="section-title">Join Our Community</h2>
+            
+            <div class="social-grid">
+                <div class="social-card">
+                    <i class="fab fa-facebook social-icon" style="color: #1877f2;"></i>
+                    <h3>Facebook</h3>
+                    <p>Follow us for daily updates and viral content</p>
+                    <a href="https://www.facebook.com/share/1BYfbKJEbP/?mibextid=wwXIfr" target="_blank" class="social-link">Follow Now</a>
+                </div>
+                
+                <div class="social-card">
+                    <i class="fab fa-telegram social-icon" style="color: #0088cc;"></i>
+                    <h3>Telegram</h3>
+                    <p>Join our Telegram channel for instant updates</p>
+                    <a href="https://t.me/nighthub2025" target="_blank" class="social-link">Join Now</a>
+                </div>
+                
+                <div class="social-card">
+                    <i class="fas fa-globe social-icon" style="color: #4CAF50;"></i>
+                    <h3>Website</h3>
+                    <p>Visit our main website for more information</p>
+                    <a href="https://sites.google.com/view/ai-bd-agency/home?authuser=3" target="_blank" class="social-link">Visit Now</a>
+                </div>
+                
+                <div class="social-card">
+                    <i class="fab fa-youtube social-icon" style="color: #FF0000;"></i>
+                    <h3>YouTube</h3>
+                    <p>Subscribe to our YouTube channel</p>
+                    <a href="#" class="social-link">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-play-circle"></i>
+                <span>Viral Deshi Hub</span>
+            </div>
+            
+            <div class="copyright">
+                © 2025 Viral Deshi Hub. All Rights Reserved. | Premier Bangladeshi Viral Video Platform
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Player Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <div class="video-modal-header">
+                <h3 class="video-modal-title" id="modalVideoTitle">Video Title</h3>
+                <button class="close-video-modal" id="closeVideoModal">&times;</button>
+            </div>
+            <div class="video-player">
+                <iframe id="videoFrame" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Admin credentials (hidden from users)
+        const ADMIN_CREDENTIALS = {
+            username: "hub2025",
+            password: "admin123"
+        };
+
+        // Load videos from localStorage
+        let videos = JSON.parse(localStorage.getItem('viralDeshiVideos')) || [
+            {
+                id: 1,
+                title: "Bangladeshi Street Food Tour in Old Dhaka",
+                thumbnail: "https://i.postimg.cc/0jYQ8bXW/food.jpg",
+                videoUrl: "https://www.youtube.com/embed/6G3OoUaToiQ",
+                channel: "Deshi Food Adventures",
+                views: "1.8M"
+            },
+            {
+                id: 2,
+                title: "Traditional Bangladeshi Wedding Ceremony",
+                thumbnail: "https://i.postimg.cc/kX2ZqY2R/wedding.jpg",
+                videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                channel: "BD Wedding Diaries",
+                views: "950K"
+            },
+            {
+                id: 3,
+                title: "Cox's Bazar - World's Longest Sea Beach",
+                thumbnail: "https://i.postimg.cc/XNb3kzW7/cox.jpg",
+                videoUrl: "https://www.youtube.com/embed/9bZkp7q19f0",
+                channel: "Travel Bangladesh",
+                views: "3.2M"
+            },
+            {
+                id: 4,
+                title: "Bangladeshi Folk Music Live Performance",
+                thumbnail: "https://i.postimg.cc/9FRB8WcJ/music.jpg",
+                videoUrl: "https://www.youtube.com/embed/J---aiyznGQ",
+                channel: "Bengali Heritage",
+                views: "680K"
+            }
+        ];
+
+        // DOM elements
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const adminPanelBtn = document.getElementById('adminPanelBtn');
+        const mobileAdminBtn = document.getElementById('mobileAdminBtn');
+        const adminSidebar = document.getElementById('adminSidebar');
+        const adminCloseBtn = document.getElementById('adminCloseBtn');
+        const overlay = document.getElementById('overlay');
+        const adminLoginForm = document.getElementById('adminLoginForm');
+        const adminPanelContent = document.getElementById('adminPanelContent');
+        const adminUsername = document.getElementById('adminUsername');
+        const adminPassword = document.getElementById('adminPassword');
+        const loginBtn = document.getElementById('loginBtn');
+        const loginError = document.getElementById('loginError');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const addVideoForm = document.getElementById('addVideoForm');
+        const adminVideosList = document.getElementById('adminVideosList');
+        const videosContainer = document.getElementById('videosContainer');
+        const totalVideosElement = document.getElementById('totalVideos');
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notificationText');
+        const videoModal = document.getElementById('videoModal');
+        const videoFrame = document.getElementById('videoFrame');
+        const modalVideoTitle = document.getElementById('modalVideoTitle');
+        const closeVideoModal = document.getElementById('closeVideoModal');
+
+        // Check if admin is logged in
+        let isAdminLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
+
+        // Initialize the application
+        function initializeApp() {
+            updateVideoCount();
+            initializeVideoCards();
+            updateAdminVideosList();
+            setupEventListeners();
+            
+            // Show admin panel content if already logged in
+            if (isAdminLoggedIn) {
+                showAdminPanelContent();
+            }
+
+            // Register PWA Service Worker
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => console.log('SW Registered'))
+                    .catch(err => console.log('SW Failed', err));
+            }
+        }
+
+        // Update video count
+        function updateVideoCount() {
+            totalVideosElement.textContent = videos.length;
+        }
+
+        // Initialize video cards for main site
+        function initializeVideoCards() {
+            videosContainer.innerHTML = '';
+            
+            videos.forEach(video => {
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card';
+                videoCard.innerHTML = `
+                    <div class="thumbnail-container">
+                        <img src="${video.thumbnail}" alt="${video.title}" class="thumbnail" loading="lazy">
+                        <div class="play-btn-overlay" data-video-id="${video.id}">
+                            <div class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">${video.title}</h3>
+                        <div class="video-meta">
+                            <div class="video-channel">
+                                <div class="channel-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span>${video.channel}</span>
+                            </div>
+                            <span class="video-views">${video.views} views</span>
+                        </div>
+                    </div>
+                `;
+                
+                videosContainer.appendChild(videoCard);
+            });
+            
+            // Add click events to play buttons
+            document.querySelectorAll('.play-btn-overlay').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = parseInt(this.getAttribute('data-video-id'));
+                    playVideoWithAd(videoId);
+                });
+            });
+            
+            updateVideoCount();
+        }
+
+        // Update admin videos list
+        function updateAdminVideosList() {
+            adminVideosList.innerHTML = '';
+            
+            if (videos.length === 0) {
+                adminVideosList.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-video-slash"></i>
+                        <h3>No Videos Found</h3>
+                        <p>Add your first video</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Sort videos by ID (newest first)
+            const sortedVideos = [...videos].sort((a, b) => b.id - a.id);
+            
+            sortedVideos.forEach((video, index) => {
+                const videoItem = document.createElement('div');
+                videoItem.className = 'video-item';
+                videoItem.innerHTML = `
+                    <div class="video-item-header">
+                        <div class="video-number">${index + 1}</div>
+                        <div class="video-actions">
+                            <button class="delete-video-btn" data-id="${video.id}" title="Delete Video">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <img src="${video.thumbnail}" alt="${video.title}" class="video-thumbnail" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'">
+                        <div class="video-info">
+                            <h4>${video.title}</h4>
+                            <p>${video.channel} • ${video.views} views</p>
+                        </div>
+                    </div>
+                `;
+                
+                adminVideosList.appendChild(videoItem);
+            });
+            
+            // Add delete event listeners
+            document.querySelectorAll('.delete-video-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = parseInt(this.getAttribute('data-id'));
+                    deleteVideo(videoId);
+                });
+            });
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Hamburger menu toggle
+            hamburgerMenu.addEventListener('click', toggleMobileMenu);
+            
+            // Admin panel buttons
+            adminPanelBtn.addEventListener('click', openAdminPanel);
+            mobileAdminBtn.addEventListener('click', openAdminPanel);
+            
+            // Close admin panel
+            adminCloseBtn.addEventListener('click', closeAdminPanel);
+            overlay.addEventListener('click', closeAdminPanel);
+            
+            // Login form
+            loginBtn.addEventListener('click', handleLogin);
+            
+            // Logout button
+            logoutBtn.addEventListener('click', handleLogout);
+            
+            // Add video form
+            addVideoForm.addEventListener('submit', handleAddVideo);
+            
+            // Close video modal
+            closeVideoModal.addEventListener('click', closeVideoModalFunc);
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) closeVideoModalFunc();
+            });
+            
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (mobileMenu.classList.contains('active')) {
+                            toggleMobileMenu();
+                        }
+                    }
+                });
+            });
+            
+            // Close mobile menu on link click
+            document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            hamburgerMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Open admin panel
+        function openAdminPanel() {
+            adminSidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Close mobile menu if open
+            if (mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        }
+
+        // Close admin panel
+        function closeAdminPanel() {
+            adminSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Show admin panel content (after login)
+        function showAdminPanelContent() {
+            adminLoginForm.style.display = 'none';
+            adminPanelContent.classList.add('active');
+        }
+
+        // Hide admin panel content (after logout)
+        function hideAdminPanelContent() {
+            adminLoginForm.style.display = 'block';
+            adminPanelContent.classList.remove('active');
+        }
+
+        // Handle login
+        function handleLogin() {
+            const username = adminUsername.value.trim();
+            const password = adminPassword.value.trim();
+            
+            if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+                // Successful login
+                isAdminLoggedIn = true;
+                localStorage.setItem('adminLoggedIn', 'true');
+                loginError.style.display = 'none';
+                adminUsername.value = '';
+                adminPassword.value = '';
+                
+                showAdminPanelContent();
+                showNotification('Admin login successful!');
+            } else {
+                // Failed login
+                loginError.style.display = 'block';
+                adminUsername.value = '';
+                adminPassword.value = '';
+                adminUsername.focus();
+            }
+        }
+
+        // Handle logout
+        function handleLogout() {
+            isAdminLoggedIn = false;
+            localStorage.removeItem('adminLoggedIn');
+            hideAdminPanelContent();
+            closeAdminPanel();
+            showNotification('Logged out successfully!');
+        }
+
+        // Handle add video
+        function handleAddVideo(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('videoTitle').value.trim();
+            const videoUrl = document.getElementById('videoUrl').value.trim();
+            const thumbnailUrl = document.getElementById('thumbnailUrl').value.trim();
+            const channel = document.getElementById('channelName').value.trim();
+            const views = document.getElementById('videoViews').value.trim() || '0';
+            
+            // Validation
+            if (!title || !videoUrl || !thumbnailUrl || !channel) {
+                showNotification('Please fill in all required fields', 'error');
+                return;
+            }
+            
+            // Generate new ID
+            const newId = videos.length > 0 ? Math.max(...videos.map(v => v.id)) + 1 : 1;
+            
+            // Create video object
+            const newVideo = {
+                id: newId,
+                title: title,
+                thumbnail: thumbnailUrl,
+                videoUrl: videoUrl,
+                channel: channel,
+                views: views
+            };
+            
+            // Add to videos array
+            videos.push(newVideo);
+            
+            // Save to localStorage
+            localStorage.setItem('viralDeshiVideos', JSON.stringify(videos));
+            
+            // Update UI
+            initializeVideoCards();
+            updateAdminVideosList();
+            
+            // Reset form
+            addVideoForm.reset();
+            
+            // Show notification
+            showNotification('Video added successfully!');
+        }
+
+        // Delete video
+        function deleteVideo(videoId) {
+            if (!confirm('Are you sure you want to delete this video?')) {
+                return;
+            }
+            
+            // Remove from videos array
+            videos = videos.filter(video => video.id !== videoId);
+            
+            // Save to localStorage
+            localStorage.setItem('viralDeshiVideos', JSON.stringify(videos));
+            
+            // Update UI
+            initializeVideoCards();
+            updateAdminVideosList();
+            
+            showNotification('Video deleted successfully!');
+        }
+
+        // Play video with ad simulation
+        function playVideoWithAd(videoId) {
+            const video = videos.find(v => v.id === videoId);
+            
+            if (!video) return;
+            
+            // Show ad simulation
+            const adContainer = document.getElementById('adsterra-ad');
+            const originalContent = adContainer.innerHTML;
+            
+            adContainer.innerHTML = `
+                <div style="padding: 30px; text-align: center;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-ad" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.5rem;">Advertisement</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Support our platform by watching this short ad</p>
+                    <div style="width: 100%; height: 120px; background: linear-gradient(135deg, var(--light), var(--primary)); display: flex; align-items: center; justify-content: center; border-radius: 10px; margin-bottom: 20px; position: relative; overflow: hidden; border: 2px solid rgba(0, 212, 255, 0.3);">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: rgba(255, 255, 255, 0.1);">
+                            <div id="progress-bar" style="height: 100%; background: var(--gradient-accent); width: 0%; transition: width 1s linear;"></div>
+                        </div>
+                        <div style="text-align: center;">
+                            <h4 style="color: white; font-size: 1.2rem; margin-bottom: 10px;">Adsterra</h4>
+                            <p style="color: var(--text-muted);">Advertisement in progress...</p>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 1rem;">Video will start in <span id="countdown" style="color: var(--accent); font-weight: bold;">5</span> seconds...</p>
+                </div>
+            `;
+            
+            // Countdown timer
+            let countdown = 5;
+            const countdownElement = document.getElementById('countdown');
+            const progressBar = document.getElementById('progress-bar');
+            
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                countdownElement.textContent = countdown;
+                progressBar.style.width = `${(5 - countdown) * 20}%`;
+                
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    // Reset ad container
+                    adContainer.innerHTML = originalContent;
+                    // Play the video
+                    playVideo(video);
+                }
+            }, 1000);
+        }
+
+        // Play video
+        function playVideo(video) {
+            modalVideoTitle.textContent = video.title;
+            
+            // Handle different video URL formats
+            let embedUrl = video.videoUrl;
+            
+            // Convert Google Drive links
+            if (video.videoUrl.includes('drive.google.com')) {
+                const fileId = video.videoUrl.match(/\/d\/(.*?)\//)?.[1] || 
+                              video.videoUrl.match(/id=(.*?)(&|$)/)?.[1];
+                if (fileId) {
+                    embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+                }
+            }
+            
+            // Add autoplay parameter
+            const separator = embedUrl.includes('?') ? '&' : '?';
+            videoFrame.src = embedUrl + separator + "autoplay=1&rel=0";
+            
+            videoModal.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close video modal
+        function closeVideoModalFunc() {
+            videoModal.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            videoFrame.src = '';
+        }
+
+        // Show notification
+        function showNotification(message, type = 'success') {
+            notificationText.textContent = message;
+            notification.className = `notification ${type === 'error' ? 'error' : ''} show`;
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initializeApp);
+        
+        // Handle page visibility change
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                // Refresh videos when page becomes visible
+                const savedVideos = localStorage.getItem('viralDeshiVideos');
+                if (savedVideos) {
+                    videos = JSON.parse(savedVideos);
+                    initializeVideoCards();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
