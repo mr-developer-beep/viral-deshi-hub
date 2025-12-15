@@ -981,7 +981,7 @@
             margin-top: 20px;
         }
 
-        /* Video Player Modal */
+/* YouTube Style Modal Design */
         .video-modal {
             display: none;
             position: fixed;
@@ -989,48 +989,190 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(7, 10, 28, 0.98);
-            backdrop-filter: blur(30px);
-            z-index: 3000;
-            align-items: center;
-            justify-content: center;
+            background: rgba(15, 23, 42, 0.95); /* আপনার ব্যাকগ্রাউন্ড কালার */
+            z-index: 5000;
+            overflow-y: auto; /* স্ক্রল করার জন্য */
         }
 
         .video-modal.active {
-            display: flex;
+            display: block;
         }
 
         .video-modal-content {
-            background: var(--glass-bg);
-            width: 95%;
-            max-width: 1200px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .video-modal-header {
-            padding: 20px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .video-modal-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text);
+            width: 100%;
+            min-height: 100vh;
+            background: var(--primary); /* Dark Blue Background */
+            position: relative;
         }
 
         .close-video-modal {
-            font-size: 2rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: var(--transition);
-            background: none;
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            font-size: 40px;
+            color: #fff;
+            background: rgba(0,0,0,0.5);
             border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 6000;
+        }
+
+        /* Layout Grid */
+        .youtube-layout {
+            display: grid;
+            grid-template-columns: 70% 30%; /* পিসিতে: বামে প্লেয়ার, ডানে লিস্ট */
+            gap: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-top: 40px;
+        }
+
+        /* Player Section */
+        .video-player-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .video-player-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .current-video-info {
+            padding: 20px 0;
+            color: #fff;
+        }
+
+        .current-video-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .video-stats-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+
+        .channel-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .channel-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .subscribe-btn {
+            background: #fff;
+            color: #0f172a;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .video-actions-bar button {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* Sidebar Suggestion List */
+        .recommendation-sidebar h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .suggested-video-card {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        .suggested-video-card:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .suggested-thumb {
+            width: 160px;
+            height: 90px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .suggested-info h4 {
+            font-size: 0.95rem;
+            color: #fff;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .suggested-info p {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        /* Responsive for Mobile */
+        @media (max-width: 992px) {
+            .youtube-layout {
+                grid-template-columns: 1fr; /* মোবাইলে এক কলাম (উপরে প্লেয়ার, নিচে লিস্ট) */
+                padding: 10px;
+                padding-top: 50px;
+            }
+            
+            .video-player-wrapper {
+                position: sticky;
+                top: 0;
+                z-index: 10;
+            }
+            
+            .close-video-modal {
+                top: 5px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 25px;
+                z-index: 7000;
+            }
         }
 
         .close-video-modal:hover {
