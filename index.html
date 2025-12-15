@@ -2030,28 +2030,76 @@
             }, 1000);
         }
 
-        // Play video
+// Play video & Generate Suggestions
         function playVideo(video) {
-            modalVideoTitle.textContent = video.title;
+            // ১. প্লেয়ারের তথ্য আপডেট করা
+            const modalTitle = document.getElementById('modalVideoTitle');
+            const modalChannel = document.getElementById('modalChannelName');
             
-            // Handle different video URL formats
+            // টাইটেল সেট করা (যদি এলিমেন্ট থাকে)
+            if(modalTitle) modalTitle.textContent = video.title;
+            // চ্যানেল নেম সেট করা (যদি এলিমেন্ট থাকে)
+            if(modalChannel) modalChannel.textContent = video.channel || "Viral Hub";
+            
+            // ২. ভিডিও লিংক প্রসেস করা
             let embedUrl = video.videoUrl;
             
-            // Convert Google Drive links
-            if (video.videoUrl.includes('drive.google.com')) {
-                const fileId = video.videoUrl.match(/\/d\/(.*?)\//)?.[1] || 
-                              video.videoUrl.match(/id=(.*?)(&|$)/)?.[1];
+            // ইউটিউব লিংক হ্যান্ডেল করা
+            if (embedUrl.includes("watch?v=")) {
+                embedUrl = embedUrl.replace("watch?v=", "embed/");
+                if (embedUrl.includes("&")) embedUrl = embedUrl.split("&")[0];
+            } else if (embedUrl.includes("youtu.be/")) {
+                embedUrl = embedUrl.replace("youtu.be/", "www.youtube.com/embed/");
+            }
+
+            // গুগল ড্রাইভ লিংক হ্যান্ডেল করা
+            if (embedUrl.includes('drive.google.com')) {
+                const fileId = embedUrl.match(/\/d\/(.*?)\//)?.[1] || 
+                              embedUrl.match(/id=(.*?)(&|$)/)?.[1];
                 if (fileId) {
                     embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
                 }
             }
-            
-            // Add autoplay parameter
+
+            // প্লে করা
             const separator = embedUrl.includes('?') ? '&' : '?';
             videoFrame.src = embedUrl + separator + "autoplay=1&rel=0";
             
+            // ৩. সাজেশন লিস্ট তৈরি করা (Up Next)
+            const suggestionList = document.getElementById('suggestedVideosList');
+            if(suggestionList) {
+                suggestionList.innerHTML = ''; // আগের লিস্ট ক্লিয়ার করা
+
+                // বর্তমান ভিডিও বাদে বাকিগুলো লুপ করা
+                videos.forEach(v => {
+                    if(v.id !== video.id) { // যে ভিডিও চলছে সেটা বাদে
+                        const card = document.createElement('div');
+                        card.className = 'suggested-video-card';
+                        card.onclick = function() {
+                            playVideo(v);
+                            // পেজের উপরে স্ক্রল করা
+                            const modal = document.querySelector('.video-modal');
+                            if(modal) modal.scrollTop = 0;
+                        };
+
+                        card.innerHTML = `
+                            <img src="${v.thumbnail}" class="suggested-thumb" alt="${v.title}">
+                            <div class="suggested-info">
+                                <h4>${v.title}</h4>
+                                <p>${v.channel || 'Viral Hub'}</p>
+                                <p>${v.views || 'New'} views</p>
+                            </div>
+                        `;
+                        suggestionList.appendChild(card);
+                    }
+                });
+            }
+
+            // ৪. মডেল ওপেন করা
             videoModal.classList.add('active');
-            overlay.classList.add('active');
+            // ওভারলে যদি থাকে (নতুন ডিজাইনে ওভারলে দরকার নেই, তাই চেক করে নিচ্ছি)
+            if(typeof overlay !== 'undefined' && overlay) overlay.classList.add('active');
+            
             document.body.style.overflow = 'hidden';
         }
 
