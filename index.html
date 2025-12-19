@@ -65,8 +65,13 @@
             --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        body {
-            background: var(--gradient-bg);
+body {
+            /* আপনার ছবিটি ব্যাকগ্রাউন্ড হিসেবে সেট করা হলো */
+            background: url('https://i.postimg.cc/13Gh2Q4t/IMG-3559.jpg') no-repeat center center fixed;
+            
+            /* ছবিটি যাতে পুরো স্ক্রিন জুড়ে সুন্দরভাবে থাকে */
+            background-size: cover;
+            
             color: var(--text);
             line-height: 1.8;
             overflow-x: hidden;
